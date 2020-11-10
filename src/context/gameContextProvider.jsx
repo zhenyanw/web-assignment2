@@ -1,14 +1,15 @@
-import React, { useState, useCallback} from "react";
+import React, { useState, useCallback } from "react";
 import GameContext from "./gameContext"
-const GameContextProvider = (props) => {
 
-    const width = props.width;
+
+
+
+function GameContextProvider(props) {
 
     const [running, setRunning] = useState(false);
     const setIsRunnig = useCallback((status) => {
         setRunning(status)
     })
-    
 
     const [gameGrid, setGameGrid] = useState([]);
     const setGrid = useCallback((newGrid) => {
@@ -25,6 +26,11 @@ const GameContextProvider = (props) => {
         setFreq(freq);
     })
 
+    const [gridDeath, setDeathGrid] = useState([]);
+    const setGridDeath = useCallback((newGrid) => {
+        setDeathGrid(newGrid);
+    })
+
     const initState = {
         isRunning: running,
         setIsRunning: setIsRunnig,
@@ -33,15 +39,16 @@ const GameContextProvider = (props) => {
         liveCellsCount: count,
         setLiveCellsCount: setLiveCellsCount,
         frequency: frequency,
-        setFrequency: setFrequency
-    } 
+        setFrequency: setFrequency,
+        gridDeath: gridDeath,
+        setGridDeath: setGridDeath
+    }
 
-  
     return (
-      <GameContext.Provider value={initState}>
-        {props.children}
-      </GameContext.Provider>
+        <GameContext.Provider value={initState}>
+            {props.children}
+        </GameContext.Provider>
     )
-  }
+}
 
 export default GameContextProvider;

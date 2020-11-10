@@ -2,13 +2,15 @@ import React from "react";
 
 const GameContext = React.createContext({
     isRunning: false,
-    setIsRunning: () => {},
+    setIsRunning: () => { },
     grid: [],
-    setGrid: () => {},
+    setGrid: () => { },
     liveCellsCount: 0,
-    setLiveCellsCount: () => {},
+    setLiveCellsCount: () => { },
     frequency: 1000,
-    setFrequency: () => {}
+    setFrequency: () => { },
+    gridDeath: [],
+    setGridDeath: () => {}
 })
 
 export default GameContext;
