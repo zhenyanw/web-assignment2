@@ -1,12 +1,10 @@
-import { rgbToHex } from "@material-ui/core";
-import React, { useState, useEffect, useRef, useCallback, useContext } from "react";
-import { Label, Input } from "reactstrap";
+import React, {useRef, useCallback, useContext } from "react";
 import GameContext from "../context/gameContext"
 import {generateEmptyGrid, cellSize} from "../helper/helper"
 
 function heatMapColor(deathCount) {
     if (deathCount >= 10) {
-        return 'white'; 
+        return 'white';
     }
     const ratio = deathCount / 10;
     let b = (Math.round(Math.min(255, 255 * ratio / 0.5))).toString(16);
@@ -91,4 +89,4 @@ function Cell({i, j, isHeatMap}) {
 
 }
 
-export default Cell
+export default Cell;

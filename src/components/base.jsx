@@ -1,13 +1,10 @@
-import React, { PropTypes } from 'react';
-import blue from '@material-ui/core/colors/blue'
-import {
-  Divider,
-  Paper,
-} from "@material-ui/core";
+import React from "react";
+import blue from "@material-ui/core/colors/blue";
+import { Divider, Paper } from "@material-ui/core";
 
 const styles = {
   container: {
-    margin: '20px 20px 20px 15px',
+    margin: "20px 20px 20px 15px",
   },
   pageTitle: {
     fontSize: 25,
@@ -20,12 +17,11 @@ const styles = {
     paddingRight: 20,
   },
   clear: {
-    clear: 'both'
-  }
-}
+    clear: "both",
+  },
+};
 
 function Base({ title, children }) {
-
   return (
     <div>
       <div style={styles.container}>
@@ -36,12 +32,10 @@ function Base({ title, children }) {
           {children}
 
           <div style={styles.clear} />
-
         </Paper>
       </div>
     </div>
   );
-};
-
+}
 
 export default Base;

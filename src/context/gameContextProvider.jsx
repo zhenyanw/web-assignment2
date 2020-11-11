@@ -1,9 +1,6 @@
 import React, { useState, useCallback } from "react";
 import GameContext from "./gameContext"
 
-
-
-
 function GameContextProvider(props) {
 
     const [running, setRunning] = useState(false);
